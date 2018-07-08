@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
+    <script src = shop.js></script>
+    <script src = addListing.js></script>
+
+    <title>Document</title>
+</head>
+<body>
+    <div class="row">
+        <div class="navbar-fixed">
+           <nav>
+               <div class="nav-wrapper">
+                   <a href="home.html" class="brand-logo" style="padding-left: 5px; font-size: 30px;">BookAdda</a>
+                   <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                   <ul id="nav-mobile" class="right hide-on-med-and-down">
+                       <li><a href="sass.html">Sass</a></li>
+                       <li><a href="addListing.html">Add Books</a></li>
+                       <li><a href="#" id="user-name" style="text-transform: capitalize;"></a></li>
+                   </ul>
+               </div>
+           </nav> 
+          </div>             
+       </div>
+        <div class="container">
+                <h3>Upload Book</h3>
+                <form  enctype="multipart/form-data">
+                    <div class="row">
+                            <div class="input-field col s6">
+                              <input id="book_name" type="text" name ="book_name" class="validate">
+                              <label class="active" for="book_name">Book Name</label>
+                            </div>
+                    </div>
+                    <div class="row">
+                            <div class="input-field col s6">
+                              <input id="author_name" type="text" name ="author_name" class="validate">
+                              <label class="active" for="author_name">Author Name</label>
+                            </div>
+                    </div>
+                    <div class="row">
+                            <div class="input-field col s6">
+                              <input id="price" type="number" name ="price" class="validate">
+                              <label class="active" for="price">Price</label>
+                            </div>
+                            <div class="input-field col s6">
+                                    <select name="condition" id="condition">
+                                      <option value="" disabled selected>Choose the condition</option>
+                                      <option value="New">New</option>
+                                      <option value="Almost New">Almost New</option>
+                                      <option value="Slight Damage">Slight Damage</option>
+                                      <option value="Worn">Worn</option>
+                                    </select>
+                                    <label for="condition">Condition</label>
+                                  </div>
+                    </div>
+                    
+                    <div class="file-field input-field">
+                    <div class="btn grey">
+                      <span>File</span>
+                      <input name="myImage" type="file">
+                    </div>
+                    <div class="file-path-wrapper">
+                      <input class="file-path validate" type="text">
+                    </div>
+                  </div>
+                  <button type="submit" class="btn" id="btnProductAdd">Submit</button>
+                </form>
+                <br>
+              </div>
+
+                      
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+    <script>
+         $(document).ready(function(){
+             $('select').formSelect();
+         });
+    </script>
+</body>
+</html>

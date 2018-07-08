@@ -1,0 +1,72 @@
+{
+  "/api/signup":{
+    "target": "http://localhost:7000/",
+    "secure" : false,
+    "changeOrigin" : true 
+  },
+  "/api/home/logout": {
+    "target": "http://localhost:7000/",
+    "secure" : false,
+    "changeOrigin" : true 
+  },    
+  "/api/home":{
+    "target": "http://localhost:7000/",
+    "secure" : false,
+    "changeOrigin" : true 
+  },
+  "/api/upload/search" :{
+    "target": "http://localhost:7000/",
+    "secure" : false,
+    "changeOrigin" : true 
+  },
+  "/api/upload":{
+    "target": "http://localhost:7000/",
+    "secure" : false,
+    "changeOrigin" : true 
+  },
+  "/api/upload/condition":{
+    "target": "http://localhost:7000/",
+    "secure" : false,
+    "changeOrigin" : true
+  },
+  "/api/upload/price" :{
+    "target": "http://localhost:7000/",
+    "secure" : false,
+    "changeOrigin" : true
+  },
+  "/api/upload/seller" : {
+    "target": "http://localhost:7000/",
+    "secure" : false,
+    "changeOrigin" : true
+  },
+  "/api/upload/item" :{
+    "target": "http://localhost:7000/",
+    "secure" : false,
+    "changeOrigin" : true 
+  },
+  "/api/addWishList/wish" :{
+    "target": "http://localhost:7000/",
+    "secure" : false,
+    "changeOrigin" : true
+  },
+  "/api/addWishList/delete": {
+    "target": "http://localhost:7000/",
+    "secure" : false,
+    "changeOrigin" : true
+  },
+  "/api/addWishList" :{
+    "target": "http://localhost:7000/",
+    "secure" : false,
+    "changeOrigin" : true 
+  },
+  "/api/message/book" :{
+    "target": "http://localhost:7000/",
+    "secure" : false,
+    "changeOrigin" : true 
+  },
+  "/api/message" :{
+    "target": "http://localhost:7000/",
+    "secure" : false,
+    "changeOrigin" : true 
+  }
+}

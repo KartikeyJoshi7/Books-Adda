@@ -1,0 +1,42 @@
+
+<div class="row" style="margin-bottom: 0px;">
+  
+  <div class="col s6" style=" height: 100vh; background-image: url('http://theiphonewalls.com/wp-content/uploads/2013/11/Library-books-shelf.jpg'); background-size: contain;">
+    <div class="row" style="padding-top: 280px;">
+      <div class="col s3"></div>
+      <div class="col s6" align = "center">
+        <a routerLink = '/signup' class="waves-effect waves-light btn"  id = "signin-btn">Sign Up</a>
+      </div>
+      
+    </div>
+  </div>
+  
+  <div class="col s6">
+    <h2 align = "center" style="color: #ff5c6c;">Sign In</h2>
+    
+    <form  [formGroup]="myForm" (submit) = "signInSubmit($event)"  class="col s12" id="reg-form">
+      
+      <div class="row">
+        <div class="input-field col s12">
+          <i class="material-icons prefix">account_circle</i>
+          <input id="u_email" formControlName="u_email" type="email" class="validate">
+          <label for="u_email">Email Address</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <i class="material-icons prefix">mode_edit</i>
+          <input id="u_password" formControlName="u_password" type="password" class="validate">
+          <label for="u_password">Password</label>
+        </div>
+      </div>
+      <br>
+      <button type="submit" class="btn" id="btnProductAdd" style="margin-left: 7%; width: 93%;" [disabled]="!myForm.valid">Submit</button>
+      
+    </form>
+    
+  </div>
+</div>
+
+
+

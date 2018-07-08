@@ -1,0 +1,58 @@
+
+<div class="row" style="margin-bottom: 0px;">
+  
+  <div class="col s6" style=" height: 100vh; background-image: url('http://theiphonewalls.com/wp-content/uploads/2013/11/Library-books-shelf.jpg'); background-size: contain;">
+    <div class="row" style="padding-top: 280px;">
+      <div class="col s3"></div>
+      <div class="col s6" align = "center">
+        <a routerLink = '/signin' class="waves-effect waves-light btn"  id = "signin-btn">Sign In</a>
+      </div>
+      
+    </div>
+  </div>
+  
+  <div class="col s6">
+    <h2 align = "center" style="color: #ff5c6c;">Sign Up</h2>
+    
+    <form [formGroup]="myForm" (submit) = "signupSubmit($event)"  class="col s12" id="reg-form">
+      
+      <div class="row">
+        <div class="input-field col s12">
+          <i class="material-icons prefix">account_circle</i>
+          <input id="u_name" formControlName="u_name" type="text" class="validate" >
+          <label for="u_name">Name</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <i class="material-icons prefix">school</i>
+          <input id="u_college" formControlName="u_college" type="text" class="validate" >
+          <label for="u_college">College</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <i class="material-icons prefix">phone</i>
+          <input id="u_phone" formControlName="u_phone" type="text" class="validate" maxlength="10" minlength="10" >
+          <label for="u_phone">Phone</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s6">
+          <i class="material-icons prefix">email</i>
+          <input id="u_email" formControlName="u_email" type="email" class="validate" >
+          <label for="u_email">Email Address</label>
+        </div>
+        <div class="input-field col s6">
+          <input id="u_password" formControlName="u_password" type="password" class="validate">
+          <label for="u_password">Password</label>
+        </div>
+      </div>
+      <div class="input-field col s12">
+      <button type="submit" class="btn" id="btnProductAdd" style="margin-left: 5px;" [disabled]="!myForm.valid">Submit</button>
+    </div>
+    </form>
+  </div>
+</div>
+
+

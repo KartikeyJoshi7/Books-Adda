@@ -1,0 +1,160 @@
+<!-- special header -->
+<div class="row">
+    <div class="navbar-fixed">
+        <nav>
+            <div class="nav-wrapper">
+                <div class="row">
+                    <div class="col s2" >
+                        <a href = "/listing" class="brand-logo" style="padding-left: 5px; font-size: 30px;">BooksAdda</a>
+                        <a routerLink="/listing" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                    </div>
+                    <div class="col s5" >
+                        <div class="row">
+                            <form  (submit) = "searchBook($event)"class="col s12">
+                                <div class="row">
+                                    <div class=" col s7" >
+                                        <input placeholder = "Search" id="searchBox" type="text" autocomplete="off" class="validate" required >
+                                    </div>
+                                    <div class=" col s2" >
+                                        <button type="submit" (click) = "whichBtn('Book')" class="waves-effect waves-light btn" id="Searchbtn">Book</button>  
+                                    </div>
+                                    <div class=" col s3" >
+                                        <button type="submit" (click) = "whichBtn('Author')" class="waves-effect waves-light btn" id="Searchbtn">Author</button>  
+                                    </div>
+                                </div>
+                            </form>  
+                        </div>
+                    </div>
+                    
+                    <div class="col s5" style="padding-right: 0px;">
+                        <ul id="nav-mobile" class=" right hide-on-med-and-down">
+                            <li><a routerLink = "/messages">Messages</a></li> 
+                            <li><a routerLink = "/wishlist">WishList</a></li>
+                            <li><a href = "/listing/add">Add Books</a></li>
+                            <li class="active"><a (click) = "SignOut()" id="user-name" style="text-transform: capitalize;" *ngIf="user !== undefined"><b>SignOut {{user.name}}</b></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div> 
+        </nav> 
+    </div>             
+</div>
+
+
+<!-- listing -->
+
+<div class="row">
+    
+    <div class="col s2" style="border-right: 2px solid #C8C8C8; height: 100vh; position: fixed;">
+        <!-- Filter panel -->
+        <div class="row">
+            <div class="col s12">
+                
+                <div class="row">
+                    
+                    <form action="#" class = "col s12" >
+                        <h5 style=" color: #A0A0A0;">Price</h5>
+                        <p>
+                            <label (click) = "filterPrice('All')">
+                                <input class="with-gap" name="Fprice" type="radio" checked />
+                                <span> All </span>
+                            </label>
+                        </p>
+                        <p>
+                            <label (click) = "filterPrice('Below 200')">
+                                <input class="with-gap" name="Fprice" type="radio" />
+                                <span> Below 200</span>
+                            </label>
+                        </p>
+                        <p>
+                            <label (click) = "filterPrice('200-500')">
+                                <input class="with-gap" name="Fprice" type="radio" />
+                                <span>200 - 500</span>
+                            </label>
+                        </p>
+                        <p>
+                            <label (click) = "filterPrice('500-800')">
+                                <input class="with-gap" name="Fprice" type="radio" />
+                                <span>500 - 800</span>
+                            </label>
+                        </p>
+                        <p>
+                            <label (click) = "filterPrice('Above 800')">
+                                <input class="with-gap" name="Fprice" type="radio" />
+                                <span> Above 800 </span>
+                            </label>
+                        </p>
+                    </form> 
+                </div>
+                <hr style="border-color: #F0F0F0 ;">
+                <div class="row">
+                    
+                    <form action="#" class="col s12">
+                        <h5 style="color: #A0A0A0;">Condition</h5>
+                        <p>
+                            <label (click) = "filterByCondn('All')">
+                                <input class="with-gap" name="Fcondtn" type="radio" checked />
+                                <span>All</span>
+                            </label>
+                        </p>
+                        <p>
+                            <label (click) = "filterByCondn('New')">
+                                <input class="with-gap" name="Fcondtn" type="radio" />
+                                <span>New</span>
+                            </label>
+                        </p>
+                        <p>
+                            <label (click) = "filterByCondn('Almost New')">
+                                <input class="with-gap" name="Fcondtn" type="radio" />
+                                <span>Almost New</span>
+                            </label>
+                        </p>
+                        <p>
+                            <label (click) = "filterByCondn('Slight Damage')">
+                                <input class="with-gap" name="Fcondtn" type="radio" />
+                                <span>Slight Damage</span>
+                            </label>
+                        </p>
+                        <p>
+                            <label (click) = "filterByCondn('Worn')">
+                                <input class="with-gap" name="Fcondtn" type="radio" />
+                                <span>Worn</span>
+                            </label>
+                        </p>
+                    </form> 
+                </div>
+            </div>   
+        </div>
+    </div>
+    
+    <div class="col s10" style="padding-top: 20px; padding-left: 4%; margin-left: 16%; ">
+        <!-- Teal page content  -->
+        <div class="row" id="book-list">
+            
+            <div *ngFor="let book of books" (click) = "onSelect(book)" class="col s4 m4" id = "carder">
+                <div class="card" style="width: 90%;">
+                    <div class="card-image">
+                        <img src= "https://kartikey-bookadda.herokuapp.com/{{book.image}}" style="height: 300px;">
+                        <span class="card-title" style = "font-size: 25px;">{{book.bookName}}</span>
+                    </div>
+                    <div class="card-content" style="height: 70px;">
+                        <div class = "row">
+                            <div class = "col s6 ">
+                                <span>{{book.authorName}}</span>
+                            </div>
+                            <div class = "col s6 ">
+                                <span style = "font-weight:bold; margin-left: 50px;" >Rs. {{book.price}}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-action">
+                        <b style="color: #FFB300;">{{book.condition}}</b>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    
+</div>
+

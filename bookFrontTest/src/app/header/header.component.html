@@ -1,0 +1,16 @@
+<div class="row">
+  <div class="navbar-fixed">
+     <nav>
+         <div class="nav-wrapper">
+             <a routerLink = "/listing" class="brand-logo" style="padding-left: 5px; font-size: 30px;">BooksAdda</a>
+             <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+             <ul id="nav-mobile" class="right hide-on-med-and-down">
+                 <li><a routerLink = "/messages">Messages</a></li> 
+                 <li><a routerLink = "/wishlist">WishList</a></li>
+                 <li><a href = "/listing/add">Add Books</a></li>
+                 <li class="active"><a (click) = "SignOut()" id="user-name" style="text-transform: capitalize;" *ngIf="user !== undefined"><b>SignOut {{user.name}}</b></a></li>
+             </ul>
+         </div>
+     </nav> 
+    </div>             
+ </div>

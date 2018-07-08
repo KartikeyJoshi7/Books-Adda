@@ -1,0 +1,16 @@
+#signin-btn{
+    background-color: salmon;
+    height: 80px; 
+    width: 65%;
+    padding-top: 22px;
+    border-radius: 35px;
+    font-size: 20px;
+    transition: transform .2s;
+    
+}
+
+#signin-btn:hover{
+    -ms-transform: scale(1.08); /* IE 9 */
+    -webkit-transform: scale(1.08); /* Safari 3-8 */
+    transform: scale(1.08); 
+}

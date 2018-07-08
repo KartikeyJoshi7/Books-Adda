@@ -1,0 +1,37 @@
+#carder{
+    transition: transform .2s;
+}
+#carder:hover{
+    
+    -ms-transform: scale(1.02); /* IE 9 */
+    -webkit-transform: scale(1.02); /* Safari 3-8 */
+    transform: scale(1.02); 
+}
+
+#searchBox{
+    background-color: white;
+    border-radius: 15px;
+    padding-left: 10px;
+    height: 42px;
+    transition: transform .2s;
+    
+}
+#searchBox:focus{
+    -ms-transform: scale(1.05); /* IE 9 */
+    -webkit-transform: scale(1.05); /* Safari 3-8 */
+    transform: scale(1.05); 
+}
+
+#Searchbtn{
+    background-color: white;
+    transition: transform .2s;
+    color: salmon;
+    border-radius: 15px;
+}
+
+#Searchbtn:hover{
+    -ms-transform: scale(1.05); /* IE 9 */
+    -webkit-transform: scale(1.05); /* Safari 3-8 */
+    transform: scale(1.05); 
+}
+
