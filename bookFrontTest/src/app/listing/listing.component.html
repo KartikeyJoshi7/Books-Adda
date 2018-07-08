@@ -134,7 +134,7 @@
             <div *ngFor="let book of books" (click) = "onSelect(book)" class="col s4 m4" id = "carder">
                 <div class="card" style="width: 90%;">
                     <div class="card-image">
-                        <img src= "https://kartikey-bookadda.herokuapp.com/{{book.image}}" style="height: 300px;">
+                        <img src= "{{book.image}}" style="height: 300px;">
                         <span class="card-title" style = "font-size: 25px;">{{book.bookName}}</span>
                     </div>
                     <div class="card-content" style="height: 70px;">
