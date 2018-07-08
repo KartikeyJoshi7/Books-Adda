@@ -4,9 +4,9 @@ const multer = require('multer');
 const Sequelize = require('sequelize');
 
 const storage = multer.diskStorage({
-    destination: function (req, file, cb) {
-        cb(null, './uploads/');
-    },
+    // destination: function (req, file, cb) {
+    //     cb(null, './uploads/');
+    // },
     filename: function (req, file, cb) {
         cb(null, new Date().toISOString() + file.originalname);
     }
@@ -29,6 +29,14 @@ const upload = multer({
     fileFilter : fileFilter
     
 });
+
+var cloudinary = require('cloudinary');
+cloudinary.config({ 
+  cloud_name: 'bharati-vidyapeeth-s-college-of-engineering', 
+  api_key: '494435138753718', 
+  api_secret: 'cT_DYJJLPoT5F67fommyvgePTyU'
+});
+
 
 const Op = Sequelize.Op;
 
@@ -258,11 +266,18 @@ route.post('/', upload.single('bookimage'), (req, res) => {
     if(req.session.user){
         
         console.log(req.file.path);
+        
+        cloudinary.uploader.upload(req.file.path, function(result) {
+            
+            var imageOnline = result.secure_url;
+            
+         console.log(imageOnline);
+        
         Listing.create({
             seller: req.session.user.name ,
             bookName: req.body.book_name,
             authorName: req.body.author_name,
-            image: req.file.path,
+            image: imageOnline,
             price: parseInt(req.body.price),
             condition: req.body.condition
         }).then((listing) => {
@@ -273,12 +288,14 @@ route.post('/', upload.single('bookimage'), (req, res) => {
                 error: err
             })
         })
+    }); 
         
     }else{
         res.send(false);
     }
     
 })
+
 
 exports = module.exports =  route
 
